@@ -21,7 +21,8 @@ map.locate({
     setView: true,
     maxZoom: 20,
     minZoom: 18,
-    enableHighAccuracy: true
+    enableHighAccuracy: true,
+    inertia:true
 });
 //END LEAFLET.USERMAKER PLUGIN
 
@@ -30,6 +31,10 @@ var layer = L.esri.dynamicMapLayer("http://maps.decaturil.gov/ArcGIS/rest/servic
 
 map.addLayer(imageLayer);
 map.addLayer(layer);
+
+// This is Esri JSAPI code; the first line determines how to get the name of the layer and the second is acquire the quantity of layers
+//alert(dynamicMapServiceLayer.layerInfos[5].name);
+//alert((dynamicMapServiceLayer.visibleLayers.length) + 1);
 
 // Identify Dynamic Map Features
 map.on("click", function (e) {
