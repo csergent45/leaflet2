@@ -25,14 +25,16 @@ map.locate({
 });
 //END LEAFLET.USERMAKER PLUGIN
 
-
+var imageLayer = L.esri.basemapLayer("Imagery");
 var layer = L.esri.dynamicMapLayer("http://maps.decaturil.gov/ArcGIS/rest/services/leaflet/MapServer");
 
+map.addLayer(imageLayer);
 map.addLayer(layer);
 
 // Identify Dynamic Map Features
 map.on("click", function (e) {
     layer.identify(e.latlng, function (data) {
+
         document.forms["frmMap"].elements["txtPin"].value = data.results[0].attributes.PIN;
         document.forms["frmMap"].elements["txtAddress"].value = data.results[0].attributes.SITEADDRESS;
         document.forms["frmMap"].elements["txtPrimaryName"].value = data.results[0].attributes.PRIMARYNAME;

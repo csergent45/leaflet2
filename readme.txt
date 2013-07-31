@@ -19,6 +19,3 @@ was put together and test results will be added to clarify later
 Authors:
 Chris Sergent
 Seth Stark
-
-
-
