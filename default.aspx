@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="default.aspx.vb" Inherits="_default" StylesheetTheme="gis" Theme="gis" %>
 <!DOCTYPE>
-
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
@@ -33,7 +32,7 @@
         <!-- Display Map Section End -->
 
         
-        <!-- Return Parcen Number, Address, Owner's Name, Owner's Address, and Legal Description -->
+        <!-- Return Parcel Number, Address, Owner's Name, Owner's Address, and Legal Description -->
         <asp:Label ID="lblPin" runat="server" Text="PIN:">
         
         </asp:Label>
@@ -105,8 +104,9 @@
     
     </script>
 
-    <script type="text/javascript" src="http://heyman.github.io/leaflet-usermarker/src/leaflet.usermarker.js">
-            
+    <!-- Leaflet Marker: http://heyman.github.io/leaflet-usermarker/src/leaflet.usermarker.js -->
+    <script src="js/leaflet.usermarker.js" type="text/javascript">
+    
     </script>
     
         
