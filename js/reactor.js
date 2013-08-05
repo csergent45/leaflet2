@@ -16,15 +16,15 @@ map.on("locationfound", function (location) {
 });
 
 map.locate({
-    watch: true, //This makes the locator move as the user changes location. Set to false to disable.
-    locate: false,
+    watch: false, //This makes the locator move as the user changes location. Set to false to disable.
+    locate: true, // Set to true to locate the current location of the user
     setView: true,
     maxZoom: 20,
     minZoom: 18,
     enableHighAccuracy: true,
     inertia:true
 });
-//END LEAFLET.USERMAKER PLUGIN
+//END LEAFLET.USERMARKER PLUGIN
 
 var imageLayer = L.esri.basemapLayer("Imagery");
 var streetsLayer = L.esri.dynamicMapLayer("http://maps.decaturil.gov/ArcGIS/rest/services/leaflet/Streets/MapServer");
