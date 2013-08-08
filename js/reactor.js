@@ -27,13 +27,14 @@ map.locate({
 //END LEAFLET.USERMARKER PLUGIN
 
 var imageLayer = L.esri.basemapLayer("Imagery");
-var streetsLayer = L.esri.dynamicMapLayer("http://maps.decaturil.gov/ArcGIS/rest/services/leaflet/Streets/MapServer");
-var layer = L.esri.dynamicMapLayer("http://maps.decaturil.gov/ArcGIS/rest/services/leaflet/MapServer");
+var lBaseLayer = L.esri.dynamicMapLayer("http://maps.decaturil.gov/ArcGIS/rest/services/leaflet/lBase/MapServer");
+var parcels = L.esri.dynamicMapLayer("http://maps.decaturil.gov/ArcGIS/rest/services/leaflet/lParcels/MapServer");
 
-
+ 
 map.addLayer(imageLayer);
-map.addLayer(layer);
-map.addLayer(streetsLayer);
+map.addLayer(parcels);
+map.addLayer(lBaseLayer);
+
 
 // This is Esri JSAPI code; the first line determines how to get the name of the layer and the second is acquire the quantity of layers
 //alert(dynamicMapServiceLayer.layerInfos[5].name);
@@ -41,7 +42,7 @@ map.addLayer(streetsLayer);
 
 // Identify Dynamic Map Features
 map.on("click", function (e) {
-    layer.identify(e.latlng, function (data) {
+    parcels.identify(e.latlng, function (data) {
         //alert(data.results[0].layerName); - This will identify a layer name in leaflet
         document.forms["frmMap"].elements["txtPin"].value = data.results[0].attributes.PIN;
         document.forms["frmMap"].elements["txtAddress"].value = data.results[0].attributes.SITEADDRESS;
